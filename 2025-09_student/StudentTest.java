@@ -28,23 +28,8 @@ public class StudentTest
     @BeforeEach
     public void setUp()
     {
-        System.out.println("executing setUp()");
     }
 
-    @Test
-    public void testBMI () {
-        //throw new IllegalArgumentException("es ist mir nix besseres eingefallen");
-        //assert(false);
-        // kein Code bedeutet Test wird gut gehen ... TODO
-    }
-    
-    @Test
-    public void testWertung() {
-        Student student = new Student("Ferdinand", true, 181, 100);
-        assertEquals("Übergewichtig", student.bmi_werter(), "BMI Wertung");
-        student = new Student("Harald", false, 200, 65);
-        assertEquals("Untergewichtig", 
-    }
     /**
      * Tears down the test fixture.
      *
@@ -53,6 +38,47 @@ public class StudentTest
     @AfterEach
     public void tearDown()
     {
-        System.out.println("executing tearDown()");
+    }
+    
+    @Test
+    public void testBmiWerter_mann_untergewichtig()
+    {
+        Student student=new Student("xyz", 10f, 200, 'm');
+        assertEquals("Untergewicht", student.bmi_werter());
+    }
+    
+        @Test
+    public void testBmiWerter_mann_normalgewicht()
+    {
+        Student student=new Student("xyz", 68f, 168, 'm');
+        assertEquals("Normal", student.bmi_werter());
+    }
+    
+        @Test
+    public void testBmiWerter_mann_übergewichtig()
+    {
+        Student student=new Student("xyz", 150f, 175, 'm');
+        assertEquals("Übergewicht", student.bmi_werter());
+    }
+    
+        @Test
+    public void testBmiWerter_frau_untergewichtig()
+    {
+        Student student=new Student("xyz", 10f, 200, 'f');
+        assertEquals("Untergewicht", student.bmi_werter());
+    }
+    
+        @Test
+    public void testBmiWerter_frau_normalgewicht()
+    {
+        Student student=new Student("xyz", 68f, 169, 'f');
+        assertEquals("Normal", student.bmi_werter());
+    }
+    
+        @Test
+    public void testBmiWerter_frau_übergewichtig()
+    {
+        Student student=new Student("xyz", 150f, 175, 'f');
+        assertEquals("Übergewicht", student.bmi_werter());
     }
 }
