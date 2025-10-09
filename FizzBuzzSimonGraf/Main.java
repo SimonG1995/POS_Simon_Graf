@@ -1,23 +1,25 @@
 public class Main
 {
-    /*public static void main (String[] args)
+    public static void main (String[] args)
     {
-    fizzBuzz();
+        fizzBuzz();
     }
-    */
+
     //Bis 100
-    public static void fizzBuzz()
-    {
-    for (int i = 1; i <= 100; i++)
-        {
-            if (i%3 == 0)   System.out.println("Fizz");
-            if (i%5 == 0)   System.out.println("Buzz");
-            if (i%7 == 0)   System.out.println("Whizz");
-            if (i%11 == 0)  System.out.println("Bang");
-            else System.out.println(i);
+    public static void fizzBuzz() {
+        for (int i = 1; i <= 100; i++) {
+            String result = "";
+
+            if (i % 3 == 0) result += "Fizz";
+            if (i % 5 == 0) result += "Buzz";
+            if (i % 7 == 0) result += "Whizz";
+            if (i % 11 == 0) result += "Bang";
+
+            if (result.isEmpty()) System.out.println(i);
+            else System.out.println(result);
         }
     }
-    
+
     // Bis 1155
 
     /*
@@ -33,5 +35,5 @@ public class Main
             if (printResult.equals("FizzBuzzWhizzBang")) break;
         }
     }
-    */
+    */  
 }
